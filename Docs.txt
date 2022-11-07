@@ -1,0 +1,64 @@
+USERS
+    // регистрация пользователя
+    
+    POST http://localhost:8080/api/user    
+    
+    body
+    {
+    "name":"SIA ABL",
+    "login": "log",
+    "pass": "pass"
+    }  
+    //  Получение всех юзеров
+     GET http://localhost:8080/api/users
+    
+    //  Получение одного юзера по id_client
+     GET http://localhost:8080/api/user/Mobs_00000000009  - строка запроса
+    
+     id_client = Mobs_00000000009 
+    
+    // полный апдейт информации, если предварительно не зарегистрирован - тогда сообщение
+    PUT http://localhost:8080/api/user
+    body
+    {
+    "id_client":"Mobs_00000000009",
+    "name":"SIA ABL",
+    "regNumber":"40103547911",    
+    "account": "BE23967054439291",
+    "bank": "TransferWise Europe SA",
+    "iban": "",
+    "swift": "TRWIBEB1XXX",
+    "login": "log",
+    "pass": "pass"
+    }
+    //  апдейт логина пароля, если предварительно не зарегистрирован - тогда сообщение
+    http://localhost:8080/api/userLogin
+    body
+    {
+    "id_client":"Mobs_00000000009",
+    "login": "log1",
+    "pass": "pass1"
+    }
+    // апдейт банковских реквизитов, если предварительно не зарегистрирован - тогда сообщение
+    http://localhost:8080/api/userBank
+    body
+    {
+    "id_client":"Mobs_00000000009",
+    "account": "BE23967054439291",
+    "bank": "TransferWise Europe SiA",
+    "iban": "",
+    "swift": "TRWIBEB1XXX"
+    }    
+    // апдейт названия и регномера, если предварительно не зарегистрирован - тогда сообщение
+    http://localhost:8080/api/userName
+    {
+    "id_client":"Mobs_00000000009",
+    "name":"SIA ABееL",
+    "regNumber":"40103547911"    
+    }
+
+    // удаление юзера по id_client
+    
+    DELETE http://localhost:8080/api/user/new
+        
+    id_client = new

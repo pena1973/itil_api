@@ -1,0 +1,8 @@
+processing
+closed
+registered
+not_accepted
+checking
+canceled
+completed
+draft
